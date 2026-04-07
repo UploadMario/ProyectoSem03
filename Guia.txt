@@ -1,0 +1,21 @@
+el nombre de mi carpeta es CASO01 lo reemplazan de esta forma para que les funcione la insercion de datos 
+"file:///C:/xampp/htdocs/Caso01/index.html"
+
+Creacion de base de datos 
+--------------------------
+Abre el XAMPP Control Panel y activa Apache y MySQL.
+Ve a http://localhost/phpmyadmin/ en tu navegador.
+Crea una base de datos llamada sistema_ventas.
+Crea la tabla  ventas
+
+CREATE TABLE ventas (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    cliente VARCHAR(100),
+    producto VARCHAR(100),
+    cantidad INT,
+    precio INT,
+    total INT,
+    fecha TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+); 
+
+y ya :v
