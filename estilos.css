@@ -1,35 +1,91 @@
 body {
-    font-family: Arial, sans-serif; 
-    background-color: #f0f2f5;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #1a6f97;
 }
-
 .contenedor {
-    width: 400px;
-    margin: 50px auto;
-    padding: 20px;
-    background-color: white;
-    border-radius: 10px; 
-    box-shadow: 0px 0px 10px gray;
+    width: 500px;
+    height: 700px;
+    background-color: #fff;
+    margin: 100px auto;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 h1 {
-    text-align: center;
+    text-align: center;    
 }
+
 label {
     display: block;
-    margin-top: 10px;
+    margin-top: 20px;
+    font-size: auto;
 }
-input {
-    width: 100%;
-    padding: 8px;
-    margin-top: 5px;
-}
-button{
-    margin-top: 15px;
-    width: 100%;
+
+input{
+    width: 90%;
     padding: 10px;
-    background-color: blue;
-    color: white;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.btnCalcular{
+    width: 95%;
+    padding: 10px;
+    margin: 20px auto 0 auto;
+    background-color: #1a6f97;
+    color: #fff;
     border: none;
+    border-radius: 5px;
     cursor: pointer;
 }
+
+.btnRegistrar{
+    width: 95%;
+    padding: 10px;
+    margin: 20px auto 0 auto;
+    background-color: #1a9778;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
