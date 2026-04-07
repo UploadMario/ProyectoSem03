@@ -6,6 +6,8 @@ const inputTotal = document.getElementById('inputTotal');
 const divResultado = document.getElementById('resultado');
 const btnRegistrar = document.getElementById('btnRegistrar');
 const btnCalcular = document.getElementById('btnCalcular');
+const btnEliminarUltimo = document.getElementById('btnEliminarUltimo');
+const btnEliminarTodo = document.getElementById('btnEliminarTodo');
 
 btnCalcular.addEventListener('click', () => {
     const cantRaw = document.getElementById('cantidad').value.trim();
@@ -79,3 +81,33 @@ btnRegistrar.addEventListener('click', async (e) => {
         divResultado.style.color = "red";
     }
 });
+
+async function ejecutarEliminacion(tipoAccion) {
+    if (tipoAccion === "eliminar_todo" && !confirm("¿Estás seguro de borrar TODA la base de datos?")) {
+        return; // Cancela si el usuario no confirma
+    }
+
+    try {
+        const respuesta = await fetch('eliminar.php', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ accion: tipoAccion })
+        });
+
+        const resultado = await respuesta.json();
+        
+        if (resultado.mensaje) {
+            divResultado.textContent = resultado.mensaje;
+            divResultado.style.color = "blue";
+        } else {
+            throw new Error(resultado.error);
+        }
+    } catch (error) {
+        divResultado.textContent = "Error: " + error.message;
+        divResultado.style.color = "red";
+    }
+}
+
+// Eventos para los botones
+btnEliminarUltimo.addEventListener('click', () => ejecutarEliminacion("eliminar_ultimo"));
+btnEliminarTodo.addEventListener('click', () => ejecutarEliminacion("eliminar_todo"));
